@@ -19,7 +19,7 @@ class SpellCheck
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
     request = Net::HTTP::Get.new(url)
-    request['x-rapidapi-host'] = 'montanaflynn-spellcheck.p.rapidapi.com'
+    request['x-rapidapi-host'] =  ENV['spell_check_jost']
     request['x-rapidapi-key'] =  ENV['spell_check_key']
     response = http.request(request)
     @body= JSON.parse(response.body)
